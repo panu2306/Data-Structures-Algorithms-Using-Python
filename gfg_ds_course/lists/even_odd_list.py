@@ -9,9 +9,7 @@ def using_simple_method(l):
     return l1, l2 
 
 def using_list_comprehension(l):
-    l1 = [num for num in l if(num%2 == 0)]
-    l2 = [num for num in l if(num%2 != 0)]
-    return l1, l2
+    return  [num for num in l if(num%2 == 0)], [num for num in l if(num%2 != 0)]
 
 l = [1, 2, 3, 4, 5, 6, 7, 8]
 
