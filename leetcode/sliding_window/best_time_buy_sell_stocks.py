@@ -33,7 +33,26 @@ def maxProfit_2(prices):
         max_profit = max(current_profit, max_profit)
     return max_profit
 
+"""
+Second Problem 
+"""
+def maxProfit_3(prices):
+    left_index, right_index = 0, 1
+    max_profit, current_profit = 0, 0
+    intermed_profit = []
+    while(right_index < len(prices)):
+        if(prices[left_index] < prices[right_index]):
+            current_profit = prices[right_index] - prices[left_index]
+            intermed_profit.append(current_profit)
+        left_index = right_index
+        right_index += 1
+    print(intermed_profit)
+    max_profit = sum(intermed_profit)
+    return max_profit
+
+
 prices = [7,1,5,3,6,4]
 #prices = [7,6,4,3,1]
 print("Maximum Profit using brute-force: ", maxProfit_1(prices))
 print("Maximum Profit using sliding window: ", maxProfit_2(prices))
+#print("Maximum Profit using sliding window: ", maxProfit_3(prices))
